@@ -1,11 +1,15 @@
-apply plugin: 'com.android.application'
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.muxter.module1"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
